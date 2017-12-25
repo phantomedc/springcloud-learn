@@ -1,5 +1,6 @@
 package com.phantom.service;
 
+import com.phantom.serviceimpl.HelloServiceImpl;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 
 @Service
-@FeignClient(value = "service-hi")
+@FeignClient(value = "service-hi", fallback = HelloServiceImpl.class)
 public interface IHelloService {
     @RequestMapping(value = "/hi",method = RequestMethod.GET)
     String sayHiFromClientOne(@RequestParam(value = "name") String name);
