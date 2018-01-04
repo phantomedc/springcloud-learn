@@ -14,8 +14,6 @@ spring:
     config:
       server:
         git:
-          uri:  https://github.com/forezp/SpringcloudConfig/
-          searchPaths:  respo
-          username: your username
-          password: your password
+          uri:  https://github.com/phantomedc/springcloud-learn/
+          searchPaths:  common-config
     label: master
